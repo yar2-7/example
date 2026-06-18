@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Взаимодействие FlowVision с внешними программами</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #222;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 2em;
+            border-bottom: 3px solid #2c6b9e;
+            padding-bottom: 10px;
+            color: #1a3d5c;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-top: 1.8em;
+            color: #2c6b9e;
+        }
+        h3 {
+            font-size: 1.2em;
+            margin-top: 1.5em;
+            color: #1a3d5c;
+        }
+        ul {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        .program-list {
+            columns: 2 200px;
+            column-gap: 30px;
+            list-style-type: disc;
+            padding-left: 25px;
+        }
+        .program-list li {
+            break-inside: avoid;
+        }
+        .highlight-box {
+            background: #f0f4f8;
+            padding: 15px 20px;
+            border-left: 5px solid #2c6b9e;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .footer-note {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            color: #666;
+        }
+        @media (max-width: 600px) {
+            .program-list {
+                columns: 1;
+            }
+            body {
+                margin: 10px;
+                padding: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Взаимодействие FlowVision с внешними программами</h1>
+
+        <p>Функционал взаимодействия программного комплекса FlowVision с внешними программами позволяет:</p>
+
+        <h3>1. Совместные (итерационные) FSI-расчёты</h3>
+        <p>Для моделирования взаимодействия жидкости и конструкции с ПО конечно-элементного анализа в FlowVision предусмотрены коннекторы к следующим программам:</p>
+        <ul class="program-list">
+            <li><strong>SIMULIA Abaqus</strong> — программа для нелинейного конечно-элементного анализа прочности и динамики конструкций.</li>
+            <li><strong>АПМ*</strong> — программа для конечно-элементного анализа прочности и механики конструкций.</li>
+            <li><strong>DARSYS*</strong> — программа для прочностных и динамических расчётов методом конечных элементов.</li>
+            <li><strong>Fidesys*</strong> — программа для конечно-элементного моделирования в механике и физике.</li>
+            <li><strong>Зенит*</strong> — программа для конечно-элементного анализа строительных конструкций.</li>
+            <li><strong>Эйлер*</strong> — программа для прочностных расчётов и аэроупругости.</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p><strong>Для подключения ПО, не входящего в список, предусмотрены дополнительные интерфейсы:</strong></p>
+            <ul>
+                <li><strong>коннектор Произвольное взаимодействие*</strong> — интерфейс для обмена данными со сторонним ПО через файлы.</li>
+                <li><strong>API MBC (Moving Body Controller)*</strong> — интерфейс для управления движением твёрдых тел из внешних программ.</li>
+                <li><strong>API ВИП (Вычислительная инженерная платформа)*</strong> — предоставляет интерфейс для интеграции с инженерными расчётными пакетами.</li>
+            </ul>
+        </div>
+
+        <h3>2. Автоматизированная оптимизация</h3>
+        <p>Программа, которая управляет запуском FlowVision, изменяя параметры модели для поиска оптимального решения:</p>
+        <ul>
+            <li><strong>IOSO*</strong> — система для многокритериальной оптимизации, использующая FlowVision как решатель для расчёта целевых функций.</li>
+        </ul>
+
+        <h3>3. Обработка результатов</h3>
+        <p>Программы, которые получают данные от FlowVision через экспорт и работают с ними самостоятельно, без обратной связи с FlowVision:</p>
+        <ul>
+            <li><strong>EnSight</strong> — инструмент для визуализации и постобработки результатов расчётов.</li>
+            <li><strong>LMS Virtual.Lab</strong> — программа для анализа шума, вибраций и акустики.</li>
+            <li><strong>TORT</strong> — программа для расчёта переноса нейтронного и фотонного излучения.</li>
+        </ul>
+
+        <div class="footer-note">
+            * — российская разработка.
+        </div>
+    </div>
+</body>
+</html>
